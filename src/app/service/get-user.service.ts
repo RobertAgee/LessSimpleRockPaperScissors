@@ -9,7 +9,7 @@ import { UserChoice } from '../model/userchoice.model';
   providedIn: 'root'
 })
 export class GetUserService {
-
+  // for use with local spring boot instance
   // getUserUrl: string = "http://localhost:8080/getAllUsers";
   // playGameUrl: string = "http://localhost:8080/playGame";
   // resetGameUrl: string = "http://localhost:8080/resetGame";

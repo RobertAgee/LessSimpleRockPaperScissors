@@ -20,8 +20,8 @@ export class MainComponent implements OnInit{
     userChoice: '',
     compChoice: ''
   };
-
   gameVideo = '../../../assets/rps.mp4';
+  device = screen.width
 
   constructor(private GetUserService: GetUserService) { }
 
