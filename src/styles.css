@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background-color: #fffaf1;
+}
+table {
+    text-align: center;
+}
+
+button {
+    background-color: #f7882f;
+    color: #fff;
+    margin: 1%;
+}
+
+p {
+    padding: 1%;
+    text-decoration: underline;
+}
+
+mat-grid-list {
+    margin: 20px;   
+}
+
+.mat-grid-tile-content {
+    flex-direction: column;
+}
+
+
+div > img {
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+video {
+    height: 385px;
+    width: 385px;
+}

@@ -1,0 +1,121 @@
+<mat-grid-list cols="3" rowHeight="100px" gutterSize="20px">
+    <mat-grid-tile
+        [colspan]="3"
+        [rowspan]="1"
+        style="background-color:#f7c331; font-size: x-large;">
+      Rock, Paper, Scissors!
+    </mat-grid-tile>
+    
+    <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="4"
+        style="background-color:#6b7a9f;">
+        <p style="font-size: x-large;">GAMES</p>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> <p>Total</p></th>
+                    <th> <p>Won</p></th>
+                    <th> <p>Tied</p></th>
+                    <th> <p>Lost</p></th>
+                </tr>
+            </thead>
+       <tbody>
+        <tr *ngFor="let eachUser of allUsers">
+            <td>{{ eachUser.gamesTotal }}</td>
+            <td>{{ eachUser.gamesWon }}</td>
+            <td>{{ eachUser.gamesTied }}</td>
+            <td>{{ eachUser.gamesLost }}</td>
+        </tr>
+        </tbody>
+        </table>
+    
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> </th>
+                    <th> Win % </th>
+                    <th> Tie % </th>
+                    <th> Lost % </th>
+                </tr>
+            </thead>
+       <tbody>
+        <tr *ngFor="let eachUser of allUsers">
+            <td> </td>
+            <td>{{ 100*eachUser.gamesWon/eachUser.gamesTotal | number: '1.0-0' }}</td>
+            <td>{{ 100*eachUser.gamesTied/eachUser.gamesTotal | number: '1.0-0' }}</td>
+            <td>{{ 100*eachUser.gamesLost/eachUser.gamesTotal | number: '1.0-0' }}</td>
+            
+        </tr>
+        </tbody>
+        </table>
+    <p>You Have Chosen:</p>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> Rock % </th>
+                    <th> Paper % </th>
+                    <th> Scissors % </th>
+                </tr>
+            </thead>
+       <tbody>
+        <tr *ngFor="let eachUser of allUsers">
+            <td>{{ 100*eachUser.youRock/eachUser.gamesTotal | number: '1.0-0' }}</td>
+            <td>{{ 100*eachUser.youPaper/eachUser.gamesTotal | number: '1.0-0' }}</td>
+            <td>{{ 100*eachUser.youScissors/eachUser.gamesTotal | number: '1.0-0' }}</td>
+            
+        </tr>
+        </tbody>
+        </table>
+    <p>Computer Has Chosen:</p>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> Rock % </th>
+                    <th> Paper % </th>
+                    <th> Scissors % </th>
+                </tr>
+            </thead>
+       <tbody>
+        <tr *ngFor="let eachUser of allUsers">
+            <td>{{ 100*eachUser.compRock/eachUser.gamesTotal | number: '1.0-0' }}</td>
+            <td>{{ 100*eachUser.compPaper/eachUser.gamesTotal | number: '1.0-0' }}</td>
+            <td>{{ 100*eachUser.compScissors/eachUser.gamesTotal | number: '1.0-0' }}</td>
+        </tr>
+        </tbody>
+        </table>
+        <button type="button" class="btn btn-success" (click)="resetGame()">
+            <span class="material-symbols-outlined">restart_alt</span> Reset Score
+        </button>
+
+    </mat-grid-tile>
+    <mat-grid-tile
+        [colspan]="2"
+        [rowspan]="4"
+        style="background-color: #dcc7aa;">
+
+        <div style="display: flex; flex-direction: row;">
+            <video [muted]="true" [autoplay]="true">
+                <source *ngIf="gameVideo" src="{{ gameVideo }}" type="video/mp4">
+              </video> 
+              <!-- Thanks to <a href="https://dribbble.com/Fishfinger"> Fishfinger Creative Agency </a> for the animation! -->
+        </div>
+        <div style="display: flex; flex-direction: row;">
+        <button type="button" class="btn btn-success" (click)="playGame('Rock')">
+            <span class="material-symbols-outlined">radio_button_checked</span> Rock
+        </button>
+        <button type="button" class="btn btn-success" (click)="playGame('Paper')">
+            <span class="material-symbols-outlined">feed</span> Paper
+        </button>
+        <button type="button" class="btn btn-success" (click)="playGame('Scissors')">
+            <span class="material-symbols-outlined">cut</span> Scissors
+        </button>
+    </div>
+    </mat-grid-tile>
+</mat-grid-list>
+  
+
+
+   
+
