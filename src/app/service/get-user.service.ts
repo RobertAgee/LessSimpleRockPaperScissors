@@ -10,9 +10,13 @@ import { UserChoice } from '../model/userchoice.model';
 })
 export class GetUserService {
 
-  getUserUrl: string = "http://localhost:8080/getAllUsers";
-  playGameUrl: string = "http://localhost:8080/playGame";
-  resetGameUrl: string = "http://localhost:8080/resetGame";
+  // getUserUrl: string = "http://localhost:8080/getAllUsers";
+  // playGameUrl: string = "http://localhost:8080/playGame";
+  // resetGameUrl: string = "http://localhost:8080/resetGame";
+
+  getUserUrl: string = "https://lesssimplepaperrockscissors.herokuapp.com/getAllUsers";
+  playGameUrl: string = "https://lesssimplepaperrockscissors.herokuapp.com/playGame";
+  resetGameUrl: string = "https://lesssimplepaperrockscissors.herokuapp.com/resetGame";
 
   constructor(private httpClient: HttpClient) { }
 
